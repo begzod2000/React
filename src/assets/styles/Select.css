@@ -1,0 +1,35 @@
+Select.defaultProps = {
+    border: "border",
+    size: 'regular',
+    items: [],
+    closeOnSelect: true,
+    defaultValue: "",
+};
+
+Select.propTypes = {
+placeholder: PropTypes.string,
+defaultValuex:PropTypes.string,
+border: PropTypes.oneOf(["border", "borderless"]),
+closeOnSelect: PropTypes.bool,
+items: PropTypes.arrayOf(
+PropTypes.oneOfType([
+// pass an object with text of string
+// if you want it to be disabled
+   PropTypes.shape({
+    text: PropTypes.string,
+}),
+ this will not be disabled and
+users will be able to select it
+   PropTypes.string,
+])
+),
+size: PropTypes.oneOf(["sm", "lg", "regular"]),
+NOTE: you sould only pass icon classes
+if you also pass tailwindcss classes
+    the output may not be a desired one
+         leftIcon: PropTypes.string,
+NOTE: you sould only pass icon classes
+ if you also pass tailwindcss classes
+   the output may not be a desired one
+         rightIcon: PropTypes.string,
+};
